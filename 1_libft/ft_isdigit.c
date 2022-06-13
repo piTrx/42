@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 int	ft_isdigit(int nbr)
 {
@@ -9,19 +8,3 @@ int	ft_isdigit(int nbr)
 		return (1);
 }
 
-int main (void)
-{
-	int num;
-
-	num = 59;
-	if (ft_isdigit(num) != 0)
-		printf("el caracter %d es numerico\n", num);
-	else
-		printf("el caracter %d no es numerico\n", num);
-	if (isdigit(num) != 0)
-		printf("el caracter %d es numerico\n", num);
-	else
-		printf("el caracter %d no es numerico\n", num);
-
-	return (0);
-}
