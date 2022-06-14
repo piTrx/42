@@ -8,5 +8,9 @@
 
 int	ft_isalpha(int nbr);
 int	ft_isdigit(int nbr);
+int	ft_isalnum(int nbr);
+int	ft_isascii(int nbr);
+int	ft_isprint(int nbr);
+int	ft_strlen(char *str);
 
 #endif
