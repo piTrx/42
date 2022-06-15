@@ -5,7 +5,7 @@ int main (void)
 	int num;
     char *test = "test this out";
 
-	num = 56;
+	num = 93;
     if (ft_isalpha(num) != 0)
 		printf("el caracter %d es alfabetico\n", num);
 	else
