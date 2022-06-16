@@ -13,7 +13,7 @@
 
 int	ft_isalnum(int nbr)
 {
-	if (ft_isalpha(nbr) == 0 && ft_isdigit(nbr) == 0)
+	if ((nbr < 65 || (nbr > 90 && nbr < 97) || nbr > 122) && (nbr < 48 || nbr > 57))
 		return (0);
 	else
 		return (1);
