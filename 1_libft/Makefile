@@ -35,7 +35,6 @@ ft_isprint.o: ft_isprint.c
 ft_strlen.o: ft_strlen.c
 	$(CC) $(CFLAGS) -c ft_strlen.c
 
-
 clean: 
 	rm *.o 
 
