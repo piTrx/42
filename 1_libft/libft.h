@@ -19,11 +19,12 @@
 #include <ctype.h>
 #include <string.h>
 
-int	ft_isalpha(int nbr);
-int	ft_isdigit(int nbr);
-int	ft_isalnum(int nbr);
-int	ft_isascii(int nbr);
-int	ft_isprint(int nbr);
-int	ft_strlen(char *str);
+int		ft_isalpha(int nbr);
+int		ft_isdigit(int nbr);
+int		ft_isalnum(int nbr);
+int		ft_isascii(int nbr);
+int		ft_isprint(int nbr);
+int		ft_strlen(char *str);
+void	*ft_memset(void *str, int c, size_t len);
 
 #endif

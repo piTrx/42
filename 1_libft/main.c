@@ -4,6 +4,7 @@ int main (void)
 {
 	int num;
     char *test = "test this out";
+    char str[50];
 
 	num = 93;
     if (ft_isalpha(num) != 0)
@@ -27,5 +28,10 @@ int main (void)
     else 
         printf("el caracter %d no es imprimible\n", num);
     printf("la longitud del string \"%s\" es %d\n", test, ft_strlen(test));
+    //memset
+    strcpy(str,"This is string.h library function");
+    puts(str);
+    ft_memset(str,'$',7);
+    puts(str);
     return (0);
 }

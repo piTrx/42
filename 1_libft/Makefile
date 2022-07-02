@@ -2,17 +2,18 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 #NAME = libft.a
 #SRC	= main.c
-OBJS = main.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o
+OBJS = main.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o
 #OBJ = $(SRC:%.c=%.o)
 
-#%.o:%.c
-#	$(CC) $(CFLAGS) -o $@ $^
+#%.o: %.c
+#	$(CC) $(CFLAGS) -c $@ $^
 
 libft.a: $(OBJS)
 	ar -rv $@ $?
 
 all: $(OBJS)
-	$(CC) $(CFLAGS) main.c libft.h ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c -o pruebas
+	$(CC) $(CFLAGS) main.c libft.h ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c \
+		ft_memset.c -o pruebas
 
 main.o: main.c 
 	$(CC) $(CFLAGS) -c main.c
@@ -35,11 +36,15 @@ ft_isprint.o: ft_isprint.c
 ft_strlen.o: ft_strlen.c
 	$(CC) $(CFLAGS) -c ft_strlen.c
 
+ft_memset.o: ft_memset.c
+	$(CC) $(CFLAGS) -c ft_memset.c
+
+
 clean: 
 	rm *.o 
 
 fclean: clean
-	rm libft.a
+	rm libft.a pruebas
 
 re: 	fclean all
 	

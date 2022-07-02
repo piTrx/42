@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pedgarci <pedgarci@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/15 17:54:22 by pedgarci          #+#    #+#             */
-/*   Updated: 2022/06/15 17:54:25 by pedgarci         ###   ########.fr       */
+/*   Created: 2022/06/20 12:00:17 by pedgarci          #+#    #+#             */
+/*   Updated: 2022/06/20 12:00:24 by pedgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-void	*ft_memset(void *str, int c, size_t len)
+
+void	ft_bzero(void *str, size_t n)
 {
-	size_t i;
+    size_t i;
 	char *string;
-	char character;
-
+	
 	string = (char *) str;
-	character = (char) c;
 	i = 0;
-	while (i < len)
+	while (i < n)
 	{
-		string[i] = character;
+		string[i] = '\0';
 		i++;
 	}
-	return (NULL);
+}
+
+int main(void)
+{
+    char str[50];
+
+    strcpy(str,"This is the test for bzero");
+    puts(str);
+    ft_bzero(str, 1);
+    printf("%c", str[1]);
+    return (0);
 }
