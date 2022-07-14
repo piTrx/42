@@ -9,8 +9,7 @@
 /*   Updated: 2022/05/30 16:55:15 by pedgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
@@ -31,7 +30,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		i++;
 	return (i);
 }
-
+/*
 int main(void)
 {
     char dest[20];
@@ -44,3 +43,4 @@ int main(void)
     printf("Con la funcion original: %s\n", dest2);
     return(0);
 }
+*/

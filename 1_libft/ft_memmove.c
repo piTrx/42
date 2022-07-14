@@ -10,39 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 void    *ft_memmove(void *dst, const void *src, size_t n)
 {
-    //falta comprobar que pasa en caso de overlap
-	size_t i;
-	char *source;
-	char *dest;
-	char *rtn;
+	const unsigned char *source;
+	unsigned char *dest;
 
-	source = (char *) src;
-	rtn = (char *) dst;
-	dest = (char *) dst;
-	i = 0;
-	while (i < n)
-	{
-		dest[i] = source[i];
-		i++;
-	}
-	return (rtn);
+	source = (unsigned char *) src;
+	dest = (unsigned char *) dst;
+	if (source < dest)
+		{
+		dest += n;
+		source += n;
+		while (n--)
+			*--dest = *--source;
+		}
+	else
+		{
+	    while (n--)
+			*dest++ = *source++;
+		}
+	return (dest);
 }
 
 int main (void)
 {
-	char src[50];
-	char dst[50];
-
-	strcpy(dst,"hola ke ase");
-    strcpy(src,"This is the test for memmove");
-    puts(src);
-    memmove(dst, src, 28);
+	
+	char src[] = {65, 66, 67, 68, 69, 45, 0};
+	char dst[] = { 0,  0,  0,  0,  0,  0, 0};
+	
+    /*puts(src);
+    memmove(dst, src, 7);
     printf("%s\n", dst);
+	dst = { 0,  0,  0,  0,  0,  0, 0};
+	*/
+	puts(src);
+    ft_memmove(dst, src, 7);
+	printf("%s\n", dst);
     return (0);
 }
 

@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-
 
 void	ft_bzero(void *str, size_t n)
 {
@@ -27,7 +24,7 @@ void	ft_bzero(void *str, size_t n)
 		i++;
 	}
 }
-
+/*
 int main(void)
 {
     char str[50];
@@ -38,3 +35,4 @@ int main(void)
     printf("%c", str[1]);
     return (0);
 }
+*/

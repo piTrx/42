@@ -1,16 +1,46 @@
+#include <memory.h>
 #include <string.h>
 #include <stdio.h>
 
-int main(void)
-{
-char str[50];
-char str2[50];
+char str1[11] = "abcdefghij";
 
-strcpy(str,"holakease");
-strcpy(str2,"holakease");
-memcpy(&str[3],&str[4],7); //might blow up
-memmove(&str2[3],&str2[4],7); 
-printf("%s\n", str);
-printf("%s\n", str2);
-return (0);
+void *memcpyCustom(void *dest, const void *src, size_t n)
+{
+    char *dp = (char *)dest;
+    const char *sp = (char *)src;
+    while (n--)
+        *dp++ = *sp++;
+    return dest;
+}
+
+void *memmoveCustom(void *dest, const void *src, size_t n)
+{
+    unsigned char *pd = (unsigned char *)dest;
+    const unsigned char *ps = (unsigned char *)src;
+    if ( ps < pd )
+        for (pd += n, ps += n; n--;)
+            *--pd = *--ps;
+    else
+        while(n--)
+            *pd++ = *ps++;
+    return dest;
+}
+
+int main( void )
+{
+    printf( "The string: %s\n", str1 );
+    memcpy( str1 + 1, str1, 9 );
+    printf( "Actual memcpy output: %s\n", str1 );
+
+    strcpy( str1, "abcdefghij" );   // reset string
+
+    memcpyCustom( str1 + 1, str1, 9 );
+    printf( "Implemented memcpy output: %s\n", str1 );
+
+    strcpy( str1, "abcdefghij" );   // reset string
+
+    memmoveCustom( str1 + 1, str1, 9 );
+    printf( "Implemented memmove output: %s\n", str1 );
+    getchar();
+    return (0);
 }

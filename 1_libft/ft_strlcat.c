@@ -9,8 +9,7 @@
 /*   Updated: 2022/05/31 18:25:27 by pedgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
@@ -35,7 +34,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	dest[d + i] = '\0';
 	return (s + d);
 }
-
+/*
 int	main(void)
 {
 	char			src[] = "abcdefghi";
@@ -49,3 +48,4 @@ int	main(void)
 	printf("ft_strlcat (dest0): %s\n", dest0);
     return (0);
 }
+*/

@@ -1,5 +1,4 @@
-#include <ctype.h>
-#include <stdio.h>
+#include "libft.h"
 
 int ft_toupper(int c)
 {
@@ -8,7 +7,7 @@ if (c < 97 || c > 122)
 else
 	return (c - 32);
 }
-
+/*
 int main(void)
 {
 	int c;
@@ -20,3 +19,4 @@ int main(void)
 	printf("%c\n", ft_toupper(c));
 	return (0);
 }
+*/
