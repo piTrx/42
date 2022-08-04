@@ -31,7 +31,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		i++;
 	return (i);
 }
-/*
+
 int main(void)
 {
     char dest[20];
@@ -44,4 +44,3 @@ int main(void)
     printf("Con la funcion original: %s\n", dest2);
     return(0);
 }
-*/

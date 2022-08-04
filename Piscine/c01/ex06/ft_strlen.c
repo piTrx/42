@@ -19,14 +19,13 @@ int	ft_strlen(char *str)
 		i++;
 	return (i);
 }
-/*
+
 #include <stdio.h>
 int main(void)
 {
     char *test = "test this out";
     int len;
     len = ft_strlen(test);
-    printf("la longitud del string es de %d", len);
+    printf("la longitud del string \"%s\" es de %d", test, len);
     return (0);
 }
-*/
