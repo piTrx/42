@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pedgarci <pedgarci@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -27,6 +27,7 @@ char *ft_strrchr(char *s, int c)
         len++;
         mystring++;
     }
+    s = s + len;
     while (i <= len)
     {
         if (*s == letter)
@@ -34,7 +35,7 @@ char *ft_strrchr(char *s, int c)
         else 
         {
             i++;
-            s++;
+            s--;
         }
     }
     return (NULL);
@@ -47,8 +48,8 @@ int main (void)
     int c;
 
     string = "ola ke ase";
-    printf("%s\n", strchr(string, 'a'));
+    printf("%s\n", strrchr(string, 'a'));
     string2 = "ola ke ase";
-    printf("%s\n", ft_strchr(string2, 'a'));
+    printf("%s\n", ft_strrchr(string2, 'a'));
     return (0);
 }
