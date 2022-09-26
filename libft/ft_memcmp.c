@@ -1,45 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pedgarci <pedgarci@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 12:59:23 by pedgarci          #+#    #+#             */
-/*   Updated: 2022/05/31 12:59:26 by pedgarci         ###   ########.fr       */
+/*   Created: 2022/09/26 20:39:54 by pedgarci          #+#    #+#             */
+/*   Updated: 2022/09/26 20:40:01 by pedgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
+#include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned int	i;
+	int	i;
+	const char *mystring1;
+	const char *mystring2;
 
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && n > 0)
+	mystring1 = s1;
+	mystring2 = s2;
+
+	while (i < n)
 	{
-		if (s1[i] > s2[i])
-			return (s1[i] - s2[i]);
-		else if (s1[i] < s2[i])
-			return (s1[i] - s2[i]);
+		if (mystring1[i] > mystring2[i])
+			return (mystring1[i] - mystring2[i]);
+		else if (mystring1[i] < mystring2[i])
+			return (mystring1[i] - mystring2[i]);
 		i++;
-		n--;
 	}
 	return (0);
 }
 
-#include <stdio.h>
-
 int	main(void)
 {
-	char fir[] = "I'll compare this";
-	char sec[] = "I'll compare this, but not this";
+	char fir[] = "I'll compare thidsfhfhsfh";
+	char sec[] = "I'll compare thisd";
 	unsigned int n;
 
-	n = 18;
+	n = 17;
 	printf("How it started: %s\n%s\n\n", fir, sec);
 	//recive = ft_strcpy(sec, fir);
-	printf("Returns: %d\n", ft_strncmp(fir, sec, n));
-	printf("Returns: %d\n", strncmp(fir, sec, n));
+	printf("Returns: %d\n", ft_memcmp(fir, sec, n));
+	printf("Returns: %d\n", memcmp(fir, sec, n));
 	return (0);
 }
+
+
