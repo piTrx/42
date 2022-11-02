@@ -44,7 +44,6 @@ int main (void)
 {
     char *string; 
     char *string2;
-    int c;
 
     string = "ola ke ase";
     printf("%s\n", strchr(string, 'a'));

@@ -13,7 +13,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int		i;
+	size_t	i;
 	char	letter;
     const char *mystring;
 	
@@ -38,7 +38,6 @@ int main (void)
 {
     char *string; 
     char *string2;
-    int c;
 
     string = "ola ke ase";
     printf("%s\n", ft_memchr(string, 'w', 15));

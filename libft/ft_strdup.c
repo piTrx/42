@@ -1,44 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pedgarci <pedgarci@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 19:07:21 by pedgarci          #+#    #+#             */
-/*   Updated: 2022/10/20 19:07:24 by pedgarci         ###   ########.fr       */
+/*   Created: 2022/11/02 19:35:32 by pedgarci          #+#    #+#             */
+/*   Updated: 2022/11/02 19:35:35 by pedgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <limits.h>
 
-void    *ft_calloc(size_t count, size_t size)
+char    *ft_strdup(const char *s1)
 {
-	char *v;
-	size_t i;
-	size_t total;
+    int len;
+    int i;
+    char *string;
 
-	
-	i = 0;
-	total = count * size;
-	if (total < count || total < size)
-		return (NULL); 
-	v = (char *)malloc(total);
-	while (i < total)
-	{
-		v[i] = '\0';
-		i++;
-	}
-	return (v);
-}
+    len = 0;
+    i = 0;
+    len = ft_strlen((char *) s1);
+    string = (char *)malloc(len * sizeof(char));
+    while (i < len)
+    {
+        string [i] = s1[i];
+        i++;
+    }
+    return (string);
 
-/*int main(void) {
-
-	char *string;
-	string = ft_calloc(3, 5);
-	string[14] = 'a';
-	return (0);
 
 }
-*/
-
