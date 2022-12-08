@@ -24,6 +24,10 @@ void    *ft_calloc(size_t count, size_t size)
 	if (total < count || total < size)
 		return (NULL); 
 	v = (char *)malloc(total);
+	if (!v)
+	{
+		v = NULL;
+	}
 	while (i < total)
 	{
 		v[i] = '\0';

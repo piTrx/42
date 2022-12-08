@@ -41,6 +41,7 @@ char *ft_strrchr(char *s, int c)
     return (NULL);
 }
 
+/*
 int main (void)
 {
     char *string; 
@@ -52,3 +53,4 @@ int main (void)
     printf("%s\n", ft_strrchr(string2, 'a'));
     return (0);
 }
+*/

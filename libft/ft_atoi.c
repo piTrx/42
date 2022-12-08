@@ -9,21 +9,20 @@
 /*   Updated: 2022/10/19 12:18:34 by pedgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int	count;
+	unsigned int	count;
 	int	sign;
-	int	result;
+	unsigned long	result;
 
 	count = 0;
 	sign = 1;
 	result = 0;
 	while ((str[count] >= '\t' && str[count] <= '\r') || str[count] == ' ')
 		count++;
-	while (str[count] == '+' || str[count] == '-')
+	if (str[count] == '+' || str[count] == '-')
 	{
 		if (str[count] == '-')
 			sign *= -1;
@@ -34,13 +33,17 @@ int	ft_atoi(const char *str)
 		result = (str[count]) - '0' + (result * 10);
 		count++;
 	}
-	return (result * sign);
+	return ((int)(result * sign));
 }
 
+/*
 int	main(void)
 {
-	printf("%i\n", ft_atoi("2147483647+9+"));
-    printf("%i\n", atoi("2147483647+9+"));
+	printf("%i\n", ft_atoi("21474836488"));
+    printf("%i\n", atoi("21474836488"));
+	printf("%i\n", ft_atoi("99999999999999999999999999"));
+    printf("%i\n", atoi("99999999999999999999999999"));
 	return (0);
 }
 
+*/

@@ -36,6 +36,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (0);
 }
 
+/*
 int main(void)
 {
 	char pajar[] = "esto se acaba yaaaaa";
@@ -48,3 +49,4 @@ int main(void)
 	
 	return (0);
 }
+*/

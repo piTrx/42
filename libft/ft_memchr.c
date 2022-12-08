@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
     letter = (char) c;
     mystring = s;
     
-    while (i <= n)
+    while (i < n)
     {
         if (*mystring == letter)
             return (char *) mystring;
@@ -34,6 +34,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
     return (NULL);
 }
 
+/*
 int main (void)
 {
     char *string; 
@@ -45,3 +46,4 @@ int main (void)
     printf("%s\n", memchr(string2, 'w', 15));
     return (0);
 }
+*/

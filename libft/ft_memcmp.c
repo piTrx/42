@@ -13,9 +13,9 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
-	const char *mystring1;
-	const char *mystring2;
+	size_t	i;
+	unsigned const char *mystring1;
+	unsigned const char *mystring2;
 
 	i = 0;
 	mystring1 = s1;
@@ -32,18 +32,19 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 
+/*
 int	main(void)
 {
-	char fir[] = "I'll compare thidsfhfhsfh";
-	char sec[] = "I'll compare thisd";
+	char fir[] = "\xff\xaa\xde\xffMACOSX\xff";
+	char sec[] = "\xff\xaa\xde\x02";
 	unsigned int n;
 
-	n = 17;
+	n = 8;
 	printf("How it started: %s\n%s\n\n", fir, sec);
 	//recive = ft_strcpy(sec, fir);
 	printf("Returns: %d\n", ft_memcmp(fir, sec, n));
 	printf("Returns: %d\n", memcmp(fir, sec, n));
 	return (0);
 }
-
+*/
 

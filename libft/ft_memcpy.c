@@ -22,6 +22,8 @@ void    *ft_memcpy(void *dst, const void *src, size_t n)
 	rtn = (char *) dst;
 	dest = (char *) dst;
 	i = 0;
+	if (source == NULL && dest == NULL)
+		return (rtn);
 	while (i < n)
 	{
 		dest[i] = source[i];
@@ -30,7 +32,7 @@ void    *ft_memcpy(void *dst, const void *src, size_t n)
 	return (rtn);
 }
 
-int main (void)
+/*int main (void)
 {
 	char src[50];
 	char dst[50];
@@ -42,3 +44,4 @@ int main (void)
     printf("%s\n", dst);
     return (0);
 }
+*/
