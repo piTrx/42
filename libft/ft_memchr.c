@@ -13,25 +13,24 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	char	letter;
-    const char *mystring;
-	
+	size_t		i;
+	char		letter;
+	const char	*mystring;
+
 	i = 0;
-    letter = (char) c;
-    mystring = s;
-    
-    while (i < n)
-    {
-        if (*mystring == letter)
-            return (char *) mystring;
-        else 
-        {
-            i++;
-            mystring++;
-        }
-    }
-    return (NULL);
+	letter = (char) c;
+	mystring = s;
+	while (i < n)
+	{
+		if (*mystring == letter)
+			return ((char *) mystring);
+		else
+		{
+			i++;
+			mystring++;
+		}
+	}
+	return (NULL);
 }
 
 /*

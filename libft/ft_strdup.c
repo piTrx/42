@@ -11,23 +11,23 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char    *ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
-    int len;
-    int i;
-    char *string;
+	int		len;
+	int		i;
+	char	*string;
 
-    len = 0;
-    i = 0;
-    len = ft_strlen((char *) s1);
-    string = (char *)malloc(len * sizeof(char) + 1);
-    if (string == NULL)
-        return (NULL);
-    while (i < len)
-    {
-        string [i] = s1[i];
-        i++;
-    }
-    string [len] = '\0';
-    return (string);
+	len = 0;
+	i = 0;
+	len = ft_strlen((char *) s1);
+	string = (char *)malloc(len * sizeof(char) + 1);
+	if (string == NULL)
+		return (NULL);
+	while (i < len)
+	{
+		string [i] = s1[i];
+		i++;
+	}
+	string [len] = '\0';
+	return (string);
 }

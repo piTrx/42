@@ -18,4 +18,3 @@ int	ft_isdigit(int nbr)
 	else
 		return (1);
 }
-

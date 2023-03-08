@@ -11,56 +11,53 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int int_len(n)
+int	int_len(int n)
 {
-    unsigned int len;
-    
-    len = 0;
-    
-    if (n == 0)
-        return(1);
-    if (n < 0)
-    {
-        len += 1;
-        n = -n;
-    }
-    while (n != 0)
-    {
-        n = n / 10;
-        len++;
-    }
-    return len;
+	unsigned int	len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		len += 1;
+		n = -n;
+	}
+	while (n != 0)
+	{
+		n = n / 10;
+		len++;
+	}
+	return (len);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    char *string;
-    unsigned int number;
-    unsigned int len;
-    
-    len = int_len(n);
+	char			*string;
+	unsigned int	number;
+	unsigned int	len;
 
-    if (!(string = (char *)malloc((len + 1) * sizeof(char))))
-        return(0);
-    if (n < 0)
-    {
-        string[0] = '-';
-        number = -n;
-    }
-    else 
-        number = n;
-    if (number == 0)
-        string[0] = '0';
-    string[len] = '\0';
-    while (number != 0)
-    {
-        
-        string[len - 1] = number % 10 + 48;
-        number = number / 10;
-        len --;
-    }
-    
-    return (string);
+	len = int_len(n);
+	string = (char *)malloc((len + 1) * sizeof(char));
+	if (!string)
+		return (0);
+	if (n < 0)
+	{
+		string[0] = '-';
+		number = -n;
+	}
+	else
+		number = n;
+	if (number == 0)
+		string[0] = '0';
+	string[len] = '\0';
+	while (number != 0)
+	{
+		string[len - 1] = number % 10 + 48;
+		number = number / 10;
+		len --;
+	}
+	return (string);
 }
 /*
 int main (void)

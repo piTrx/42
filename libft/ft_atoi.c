@@ -14,7 +14,7 @@
 int	ft_atoi(const char *str)
 {
 	unsigned int	count;
-	int	sign;
+	int				sign;
 	unsigned long	result;
 
 	count = 0;

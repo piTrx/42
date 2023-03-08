@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_isalnum(int nbr)
+int	ft_isalnum(int n)
 {
-	if ((nbr < 65 || (nbr > 90 && nbr < 97) || nbr > 122) && (nbr < 48 || nbr > 57))
+	if ((n < 65 || (n > 90 && n < 97) || n > 122) && (n < 48 || n > 57))
 		return (0);
 	else
 		return (1);

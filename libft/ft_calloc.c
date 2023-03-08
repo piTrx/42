@@ -11,17 +11,16 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-void    *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	char *v;
-	size_t i;
-	size_t total;
+	char	*v;
+	size_t	i;
+	size_t	total;
 
-	
 	i = 0;
 	total = count * size;
 	if (total < count || total < size)
-		return (NULL); 
+		return (NULL);
 	v = (char *)malloc(total);
 	if (v == NULL)
 		return (NULL);
@@ -42,4 +41,3 @@ void    *ft_calloc(size_t count, size_t size)
 
 }
 */
-
