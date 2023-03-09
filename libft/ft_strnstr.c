@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *h, const char *n, size_t len)
 {
 	size_t	i;
 	size_t	j;
@@ -19,15 +19,17 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	k = 0;
-	if (needle[0] == '\0')
-		return ((char *) haystack);
-	while (haystack[i] != '\0')
+	if (len == 0 && !h)
+		return (0);
+	if (n[0] == '\0')
+		return ((char *) h);
+	while (h[i] != '\0')
 	{
 		j = 0;
-		while (needle[j] != '\0' && haystack[i + j] == needle[j] && k + j < len)
+		while (n[j] != '\0' && h[i + j] == n[j] && k + j < len)
 		{
-			if (needle[j + 1] == '\0')
-				return ((char *) &haystack[i]);
+			if (n[j + 1] == '\0')
+				return ((char *) &h[i]);
 			j++;
 		}
 		i++;

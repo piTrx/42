@@ -11,13 +11,31 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+static int	ft_min(size_t a, size_t b)
 {
-    char	*new_str;
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*new_str;
 	size_t	i;
 	size_t	j;
 
-	if (!s || !(new_str = (char *)malloc(len + 1)))
+	if (!s)
+		return (0);
+	if (start > ft_strlen(s))
+	{
+		new_str = malloc (1);
+		if (!new_str)
+			return (0);
+		new_str[0] = '\0';
+		return (new_str);
+	}
+	new_str = (char *)malloc(ft_min(ft_strlen(s) - start, len) + 1);
+	if (!new_str)
 		return (0);
 	i = start;
 	j = 0;

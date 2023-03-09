@@ -23,9 +23,9 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	while ((mystring1[i] != '\0' || mystring2[i] != '\0') && n > 0)
 	{
 		if (mystring1[i] > mystring2[i])
-			return ((unsigned char)mystring1[i] - mystring2[i]);
+			return ((unsigned char)mystring1[i] - (unsigned char)mystring2[i]);
 		else if (mystring1[i] < mystring2[i])
-			return ((unsigned char)mystring1[i] - mystring2[i]);
+			return ((unsigned char)mystring1[i] - (unsigned char)mystring2[i]);
 		i++;
 		n--;
 	}

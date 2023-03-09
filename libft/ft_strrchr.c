@@ -13,23 +13,21 @@
 
 char	*ft_strrchr(char *s, int c)
 {
-	int		i;
+	size_t	i;
 	char	letter;
-	int		len;
-	char	*mystring;
+	char	*string;
 
-	len = 0;
 	i = 0;
 	letter = (char) c;
-	s = s + ft_strlen(s);
+	string = s + ft_strlen(s);
 	while (i <= ft_strlen(s))
 	{
-		if (*s == letter)
-			return (s);
+		if (*string == letter)
+			return (string);
 		else
 		{
 			i++;
-			s--;
+			string--;
 		}
 	}
 	return (NULL);
