@@ -11,28 +11,43 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	count_words(const char *str, char c)
+static int	count_words(char const *s1, char c)
 {
-	int	i;
+	int	count;
 	int	trigger;
 
-	i = 0;
+	count = 0;
 	trigger = 0;
-	while (*str)
+	if (*s1 == '\0')
+		return (0);
+	while (*s1 != '\0')
 	{
-		if (*str != c && trigger == 0)
+		if (*s1 == c)
+			trigger = 0;
+		else if (trigger == 0)
 		{
 			trigger = 1;
-			i++;
+			count++;
 		}
-		else if (*str == c)
-			trigger = 0;
-		str++;
+		s1++;
 	}
-	return (i);
+	return (count);
 }
 
-static char	**ft_free(char const **dst, int j)
+static int	count_chars(char const *s2, char c, int i)
+{
+	int	length;
+
+	length = 0;
+	while (s2[i] != c && s2[i] != '\0')
+	{
+		length++;
+		i++;
+	}
+	return (length);
+}
+
+static char	**free_up(char const **dst, int j)
 {
 	while (j > 0)
 	{
@@ -43,32 +58,41 @@ static char	**ft_free(char const **dst, int j)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**matrix(char const *s, char **dst, char c, int l)
 {
-	size_t	i;
-	size_t	j;
-	int		index;
-	char	**split;
+	int	i;
+	int	j;
+	int	k;
 
-	split = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!s || !split)
-		return (0);
 	i = 0;
 	j = 0;
-	index = -1;
-	while (i <= ft_strlen(s))
+	while (s[i] != '\0' && j < l)
 	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
-		{
-			split[j++] = ft_substr(s, index, i - index);
-			if (split[j - 1] == NULL)
-				return (ft_free((char const **)split, j));
-			index = -1;
-		}
-		i++;
+		k = 0;
+		while (s[i] == c)
+			i++;
+		dst[j] = (char *)malloc(sizeof(char) * count_chars(s, c, i) + 1);
+		if (dst[j] == NULL)
+			return (free_up((char const **)dst, j));
+		while (s[i] != '\0' && s[i] != c)
+			dst[j][k++] = s[i++];
+		dst[j][k] = '\0';
+		j++;
 	}
-	split[j] = 0;
-	return (split);
+	dst[j] = 0;
+	return (dst);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**dst;
+	int		l;
+
+	if (s == NULL)
+		return (NULL);
+	l = count_words(s, c);
+	dst = (char **)malloc(sizeof(char *) * (l + 1));
+	if (dst == NULL)
+		return (NULL);
+	return (matrix(s, dst, c, l));
 }
