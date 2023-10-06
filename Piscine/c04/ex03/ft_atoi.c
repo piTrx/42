@@ -20,6 +20,7 @@ int	ft_atoi(char *str)
 	count = 0;
 	sign = 1;
 	result = 0;
+
 	while ((str[count] >= '\t' && str[count] <= '\r') || str[count] == ' ')
 		count++;
 	while (str[count] == '+' || str[count] == '-')
@@ -35,10 +36,10 @@ int	ft_atoi(char *str)
 	}
 	return (result * sign);
 }
-/*
+
 int	main(void)
 {
 	printf("%i", ft_atoi("   	--+-+-2147483647+9+"));
+	printf("%i", atoi("   	--+-+-2147483647+9+"));
 	return (0);
 }
-*/

@@ -96,3 +96,4 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (matrix(s, dst, c, l));
 }
+	
