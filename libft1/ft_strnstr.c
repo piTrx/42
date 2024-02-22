@@ -15,10 +15,8 @@ char	*ft_strnstr(const char *h, const char *n, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	size_t	k;
 
 	i = 0;
-	k = 0;
 	if (len == 0 && !h)
 		return (0);
 	if (n[0] == '\0')
@@ -26,14 +24,13 @@ char	*ft_strnstr(const char *h, const char *n, size_t len)
 	while (h[i] != '\0')
 	{
 		j = 0;
-		while (n[j] != '\0' && h[i + j] == n[j] && k + j < len)
+		while (n[j] != '\0' && h[i + j] == n[j] && i + j < len)
 		{
 			if (n[j + 1] == '\0')
 				return ((char *) &h[i]);
 			j++;
 		}
 		i++;
-		k++;
 	}
 	return (0);
 }

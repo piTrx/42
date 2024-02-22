@@ -13,23 +13,15 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char	*v;
-	size_t	i;
-	size_t	total;
+	void	*str;
 
-	i = 0;
-	total = count * size;
-	if (total < count || total < size)
+	if (size == SIZE_MAX || count == SIZE_MAX)
 		return (NULL);
-	v = (char *)malloc(total);
-	if (v == NULL)
+	str = malloc(count * size);
+	if (!str)
 		return (NULL);
-	while (i < total)
-	{
-		v[i] = '\0';
-		i++;
-	}
-	return (v);
+	ft_bzero(str, count * size);
+	return (str);
 }
 
 /*int main(void) {

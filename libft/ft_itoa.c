@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	int_len(int n)
+static int	int_len(int n)
 {
 	unsigned int	len;
 

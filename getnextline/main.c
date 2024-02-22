@@ -12,8 +12,8 @@ int main(void)
   fd = open("example.txt", O_RDONLY);
   if (fd == -1)
   {
-   printf("Error opening file");
-  return (1);
+    printf("Error opening file");
+    return (1);
   } 
   while (1)
   {
@@ -22,6 +22,7 @@ int main(void)
       break;
     count++;
     printf("[%d]:%s\n", count, next_line); //count is to show you the line numbers
+    free (next_line);
     next_line = NULL;
   }
   close(fd);
