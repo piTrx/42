@@ -1,9 +1,49 @@
 #include "get_next_line.h" 
 
 /* -------------------------------------------------------------------------- */
+/* Function to extract a line from the stash.                                 */
+/* -------------------------------------------------------------------------- */
+char *extract_line(char *stash)
+{
+   int i;
+   char *line;
+
+   i = 0;
+   line = ft_calloc(10, sizeof (char));
+   while (stash[i] != '\n')
+   {
+      line[i] = stash[i];
+      i++;
+   }
+   line[i] = '\0';
+   return (line);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Function to obtain the remaining stash.                                    */
+/* -------------------------------------------------------------------------- */
+char *obtain_remaining(char *stash)
+{
+   int i;
+   char *remaining;
+
+   i = 0;
+   remaining = ft_calloc(10, sizeof (char));
+   while (stash[i] != '\n')
+      i++;
+   i++;
+   while (stash[i])
+   {
+      remaining[i] = stash[i];
+      i++;
+   }
+   remaining[i] = '\0';
+   return (remaining);
+}
+
+/* -------------------------------------------------------------------------- */
 /* Function to append the read buffer data to the partial content (line).     */
 /* -------------------------------------------------------------------------- */
-
 char *append_buffer(char *stash, char *buffer)
 {
  char *temp;
@@ -12,6 +52,7 @@ char *append_buffer(char *stash, char *buffer)
  free(stash);
  return (temp);
 }
+
 /* -------------------------------------------------------------------------- */
 /* Function to read data from the file and append it to partial content.      */
 /* -------------------------------------------------------------------------- */
